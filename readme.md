@@ -50,10 +50,18 @@ http://127.0.0.1:8000/author/
 
 http://127.0.0.1:8000/admin/
 
+## Superusers
+
+admin
+rumba123
+
+user 
+garlemNY
+
 ## Celery
 to start server celery in in cmd under path \booksserver\booksserver
  run
 ```
-celery -A booksserver worker -l INFO
+celery -A booksserver worker -l info --pool=solo
  ```
 [documentation](https://docs.celeryproject.org/en/stable/userguide/testing.html)
