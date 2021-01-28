@@ -1,6 +1,6 @@
 # Booksserver django project
 
-steps:
+steps:\
 Set up Django\
 Create a models: Book, Author, Order, User( I used buildin django.contrib.auth.models) in the database that the Django ORM will manage\
 Set up the Django REST Framework\
@@ -40,6 +40,7 @@ urlpatterns = [
 ```
 python manage.py runserver
 ```
+http://127.0.0.1:8000/
 
 http://127.0.0.1:8000/order
 
