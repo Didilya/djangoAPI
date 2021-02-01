@@ -10,12 +10,14 @@ import jwt
 from .tasks import sleepy, send_email_task
 
 def index(request):
+    # Sending mail with Celery
     send_email_task.delay()
     return HttpResponse('<h1>Email has been send</h1>')
 
 
-# Create your views here.
+
 class RegisterView(generics.GenericAPIView):
+    # New user registration
     serializer_class = UserSerializer
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -25,6 +27,7 @@ class RegisterView(generics.GenericAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(generics.GenericAPIView):
+    # User login
     serializer_class = UserSerializer
     def post(self,request):
         data=request.data
@@ -37,7 +40,6 @@ class LoginView(generics.GenericAPIView):
             data={'user': serializer.data, 'token': auth_token
             }
             return Response(data, status=status.HTTP_200_OK)
-        # SEND RES
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         
 
