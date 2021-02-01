@@ -1,16 +1,15 @@
-# Booksserver django project
+# Django API project for books ordering
 
-steps:\
+Creation steps:\
 Set up Django\
 Create a models: Book, Author, Order, User( I used buildin django.contrib.auth.models) in the database that the Django ORM will manage\
 Set up the Django REST Framework\
 Serialize the model from step 2\
 Create the URI endpoints to view the serialized data\
-Create User Registration and LoginIn with JWT
+Create User Registration and LoginIn with JWT\
 Setup Celery for email sending with delay
 
 ## Installation
-
 
 ```bash
 pipx install pipenv
